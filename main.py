@@ -7,13 +7,17 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from langchain.embeddings import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 
 load_dotenv() 
 
 def main(query):
+     # Initialize the embedding model
+    embeddings = HuggingFaceEmbeddings(model_name='BAAI/bge-small-en-v1.5', encode_kwargs={"normalize_embeddings": True})
+
     # Load the vectorstore
-    vectorstore = FAISS.load_local("vectorstore.db")
+    vectorstore = FAISS.load_local("vectorstore.db",embeddings, allow_dangerous_deserialization=True)
 
     # Create a retriever
     retriever = vectorstore.as_retriever()
