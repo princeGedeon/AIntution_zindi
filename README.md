@@ -27,3 +27,7 @@ Ensure you have Python installed on your machine. The project is tested with Pyt
    pip install -r requirements.txt
    ```
 
+3. Install required Python packages:
+   ```bash
+    streamlit run app.py
+   ```
