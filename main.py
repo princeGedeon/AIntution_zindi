@@ -2,11 +2,14 @@
 """main.py - Main script for loading vector database and performing inference."""
 
 import os
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_community.llms import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 def main(query):
     # Load the vectorstore
