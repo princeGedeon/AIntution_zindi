@@ -8,8 +8,8 @@ Original file is located at
 """
 
 import getpass
-
-OPENAI_API_KEY=getpass.getpass()
+GOOGLE_API_KEY=""
+OPENAI_API_KEY=""
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -70,7 +70,7 @@ retriever = vectorstore.as_retriever()
 #         base_url="http://localhost:11434",
 #         verbose=True,
 #     )
-llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=OPENAI_API_KEY)
+llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GOOGLE_API_KEY)
 
 # Définir le modèle d'invite
 template= """
