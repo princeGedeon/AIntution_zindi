@@ -1,8 +1,10 @@
 import streamlit as st
 import os
-from ingestion import ingest_documents
-from main import main
+
 from dotenv import load_dotenv
+
+from tools.main import main
+from tools.utils import ingest_pdf
 
 load_dotenv() 
 # Set the title of the app
@@ -16,7 +18,7 @@ if uploaded_file is not None:
     with open(file_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     if st.sidebar.button('Ingest Document'):
-        ingest_documents(file_path)
+        ingest_pdf(file_path)
         st.sidebar.success('Document ingested successfully.')
         os.remove(file_path)  # Clean up the uploaded file
 

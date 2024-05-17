@@ -1,0 +1,629 @@
+Query No,Query text,Document No,Document Title,Output_1,Output_2,Output_3,Output_4,Output_5
+1,Can the Conference of the Parties of the WHO FCTC assist countries in securing financial resources for implementation?,1,1_WHO_FCTC,"Consent Building Block deals with transparency on data usage in a given context. Thus privacy-by-design of the system's actors is often an excellent guiding principle for interpreting international, national, and organisational policies and governance principles to implement the functional consent framework. A tangible outcome from a Data Protection Impact Analysis (DPIA) is a structured approach that can deliver the input for the actual implementation of the Consent Building Block.","The scope for the current version of Consent Building Block assumes that the Individual is acting for themselves. Ultimately the Consent Building Block will include in the Consenting Process the capacity to sign a Consent Agreement in the name of another individual - to act as the Delegate, which is used as the criterion for technical implementation. However, the Delegate and the Individual relationship is expected to be maintained outside of the Consent Manager, which assumes that the person signing the Consent Agreement (i.e. Consenter) has been authorised to do so.
+
+The table below summarises the key use cases identified for the Individuals.
+
+Consent use-cases
+
+Link to the UCS
+
+VIEW CONSENT - Here, the Individual views the Consent Agreement and the conditions for Personal Data processing (with adequate clarity for informed understanding). This includes obtaining copies of the consent agreement.
+
+UC-C-PIC-I-001","Certificate authorities are responsible for issuing and revoking certificates used for securing and ensuring the integrity of federated information systems. Certificate authorities MUST support the Online Certificate Status Protocol (OCSP) so that an Information Mediator can check certificate validity.
+
+Time-stamping authorities securely facilitate time stamping of messages. Time stamping authorities MUST support batched time stamping.
+
+The Service Registry provides a mechanism for building blocks to register the services that they provide and for other building blocks to discover and consume those services. Any services provided or consumed by a Building Block that leverages the Information Mediator architecture MUST use this service registry functionality.
+
+2.5 Keywords and Definitions","This document is intended to provide guidance for building block working groups and developers of products that will be integrated into a GovStack implementation. It also provides guidlines for implementers and system integrators who are deploying solutions that leverage the GovStack approach. It provides guidelines and principles that should be considered by all building blocks and cross-cutting requirements that must be considered for any GovStack project.
+
+This will accelerate the collaborative development of best-of-breed digital public goods, enhancing efficiency and transparency across the world - especially in low-resource settings.
+
+2.1 GovStack and the Building Blocks Approach","Paraphrased from the Amazon API Mandate: https://api-university.com/blog/the-api-mandate/
+
+All BBs must expose their data and functionality through service interfaces (APIs).
+
+Building Blocks communicate with each other through these interfaces.
+
+There will be no other form of interprocess communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only communication allowed is via service interface calls over the network.
+
+It doesn’t matter what technology is used. HTTP, Corba, Pubsub, custom protocols — doesn’t matter.
+
+All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.
+
+Building blocks MUST NOT use shared databases, file systems or memory for data exchange with other building blocks.
+
+5.4 APIs must be Versioned (REQUIRED)"
+2,"What should be the minimum size of health warnings and messages on tobacco products, and where should they be placed?",1,1_WHO_FCTC,"A building block MAY provide a mock testing implementation of API functionality to show example endpoints and data payloads. See https://github.com/GovStackWorkingGroup/bb-template/tree/main/examples for additional information.
+
+5.27 Building blocks should be Localizable (RECOMMENDED)
+
+Where a building block has a human user interaction, it SHOULD be able to present information to the user in their local language. Building blocks should be designed to support multiple locales.
+
+5.28 Use NTP Synchronization (RECOMMENDED)
+
+Where precise timestamps are required, building blocks SHOULD leverage Network Time Protocol (NTP) to synchronize timestamps between servers.
+
+Other Considerations
+
+Software development best practices are recommended for all building blocks. The following guidelines should be followed as part of the software development process.
+
+EOL SHOULD be at Least 5 Years","Auditing of inappropriate data access is only possible when a log trace exists.
+
+3.1
+
+Workflow
+
+Consent
+
+Given an Individual, query if active Consent Records exist (for instance, to spot if other external data needs to be kept).
+
+4.1
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/ Data Protection Act/ Right to be Forgotten/etc.)
+
+4.2
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/Data Protection Act/etc.)
+
+
+
+5 Cross-Cutting Requirements
+
+This section will highlight important requirements or describe any additional cross-cutting requirements that apply to this Building Block.
+
+5.1 Requirements
+
+The cross-cutting requirements described in this section are an extension of the cross-cutting requirements defined in the architecture specification document. Any implementation MUST adhere to all requirements from GovStack Security Requirements.
+
+5.1.1 Personal data MUST be kept private (REQUIRED)","Personal data MUST be kept private and never shared with any parties, except where specific authorisation has been granted. The Consent Building Block shall follow the privacy principles as laid out in the GovStack architecture.
+
+5.1.2 Data Policy Audit Logging (REQUIRED)
+
+Logs MUST be kept in a database of all created, updated, or deleted records. Logs MUST include timestamps and identify the user and affiliation that performed the transaction.
+
+5.1.3 Follow GovStack Access control requirements (RECOMMENDED)","JSON SHOULD be used for data models/services wherever possible. See https://www.json.org/json-en.html. Where JSON exhange is not possible, building blocks must use other standard data formats (such as XML).
+
+5.24 Use Existing Standards for Data Interchange, Where Available (RECOMMENDED)
+
+If an existing standard is available, it should be used, e.g. DICOM/Hl7/FHIR for healthcare. TMForum has a large library of standardized APIs and data models that can be used.
+
+Building blocks and building block solutions MUST leverage existing standards, especially those listed in the Standards section below.
+
+5.25 Use I/O Sanitization (RECOMMENDED)
+
+Building blocks SHOULD validate all incoming data to ensure that it conforms with the expected format and type. APIs should also sanitize incoming data, removing any unsafe characters or tokens.
+
+5.26 Provide a Compliance Test Mock/Example Implementation (OPTIONAL)","The use of consent should be avoided in cases as below, which are not part of this specification:
+
+When a person is simply informed of the processing of the data by the organisation as part of the service provided under contract or by an authority.
+
+When consent does not have to be obtained in a situation where the entity does not identify or cannot identify people with reasonable effort.
+
+
+
+Assumptions
+
+Lays out the pre-conditions needed for anyone to use the Consent Building Block.
+
+Data Disclosure Agreements between organisations are already in place. For example, a healthcare organisation has already got the required authorisation to use the citizen data registry.
+
+To link a Consent Agreement with the specific Individual, Consent Building Block assumes the authentication and authorization to be handled in a trusted manner outside of it (see below)."
+3,"I opened a company to produce sensors in Kuala Lumpur. Based on the law in the file, how should I register for sales tax, and what are my obligations?",2,2_SalesTaxAct2018_Malaysia,"Personal data MUST be kept private and never shared with any parties, except where specific authorisation has been granted. The Consent Building Block shall follow the privacy principles as laid out in the GovStack architecture.
+
+5.1.2 Data Policy Audit Logging (REQUIRED)
+
+Logs MUST be kept in a database of all created, updated, or deleted records. Logs MUST include timestamps and identify the user and affiliation that performed the transaction.
+
+5.1.3 Follow GovStack Access control requirements (RECOMMENDED)","Within this document, the key words ""MUST"", ""MUST NOT"", ""REQUIRED"", ""SHALL"", ""SHALL NOT"", ""SHOULD"", ""SHOULD NOT"", ""RECOMMENDED"", ""NOT RECOMMENDED"", ""MAY"", and ""OPTIONAL"" are to be interpreted as described in BCP 14 RFC2119 RFC8174 when, and only when, they appear in all capitals, as shown here.
+
+2.5.1 Building Block-specific definitions
+
+The following provides definitions for terms that are used by various building blocks.
+
+Registration: Any approval/license/certificate issued by a public entity as a result of a request/declaration made by a user of the public service. The result of a “registration” is usually a number and/or a document (called certificate, license, permit, authorization, registration, clearance, approval, etc.)","Auditing of inappropriate data access is only possible when a log trace exists.
+
+3.1
+
+Workflow
+
+Consent
+
+Given an Individual, query if active Consent Records exist (for instance, to spot if other external data needs to be kept).
+
+4.1
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/ Data Protection Act/ Right to be Forgotten/etc.)
+
+4.2
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/Data Protection Act/etc.)
+
+
+
+5 Cross-Cutting Requirements
+
+This section will highlight important requirements or describe any additional cross-cutting requirements that apply to this Building Block.
+
+5.1 Requirements
+
+The cross-cutting requirements described in this section are an extension of the cross-cutting requirements defined in the architecture specification document. Any implementation MUST adhere to all requirements from GovStack Security Requirements.
+
+5.1.1 Personal data MUST be kept private (REQUIRED)","Building Blocks MUST conform to GDPR principles, including the right to be forgotten account deletion, and privacy requirements to protect the rights of individuals. Note that these requirements may vary by region, and building blocks must conform to regulatory requirements wherever they are deployed.
+
+5.10 Include Support for Capturing Logging information (REQUIRED)
+
+Building Blocks MUST have a mechanism for generating logging information. This may be as simple as using STDOUT and capturing through docker logs, or may use other log sinking technologies.
+
+5.11 Use Web Hooks for Callbacks (REQUIRED)
+
+When Building Blocks require callback functionality, they must use webhooks and not direct links to functions within the building block.
+
+5.12 Enforce Transport Security (REQUIRED)
+
+All Building Blocks MUST support secure HTTPS transport with TLS 1.3 and insecure cyphers disabled.
+
+5.13 GET and PUT APIs must be Idempotent (REQUIRED)","The Consent process (creating and signing Consent Agreements and Consent Records) is initially managed in the application provided by the Organisation that is legally required to collect the consent. Since it can be either a Data Consuming organisation or a Data Providing organisation, the Consent Building Block allows both to be able to verify their conformance with the underlying Data Policy, both organisations must be able to access and use the application.
+
+While the Actors generally fall in line with the categories of the functionalities, it is important to realise that “auditing” functions in the narrow sense, verifying if data processing is being (or has been) processed according to the Data Policy requiring a consent, is relevant to various entities involved in the data processing. For this reason, the generic “verification” activity may be executed as part of various workflows satisfying the needs of different actors."
+4,"I opened a company to produce sensors in Kuala Lumpur. During product I paid sales tax on my inputs. Based on the law in the file, what are conditions to be eligible for a refund of the sales tax?",2,2_SalesTaxAct2018_Malaysia,"Personal data MUST be kept private and never shared with any parties, except where specific authorisation has been granted. The Consent Building Block shall follow the privacy principles as laid out in the GovStack architecture.
+
+5.1.2 Data Policy Audit Logging (REQUIRED)
+
+Logs MUST be kept in a database of all created, updated, or deleted records. Logs MUST include timestamps and identify the user and affiliation that performed the transaction.
+
+5.1.3 Follow GovStack Access control requirements (RECOMMENDED)","Auditing of inappropriate data access is only possible when a log trace exists.
+
+3.1
+
+Workflow
+
+Consent
+
+Given an Individual, query if active Consent Records exist (for instance, to spot if other external data needs to be kept).
+
+4.1
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/ Data Protection Act/ Right to be Forgotten/etc.)
+
+4.2
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/Data Protection Act/etc.)
+
+
+
+5 Cross-Cutting Requirements
+
+This section will highlight important requirements or describe any additional cross-cutting requirements that apply to this Building Block.
+
+5.1 Requirements
+
+The cross-cutting requirements described in this section are an extension of the cross-cutting requirements defined in the architecture specification document. Any implementation MUST adhere to all requirements from GovStack Security Requirements.
+
+5.1.1 Personal data MUST be kept private (REQUIRED)","In the GovStack context, consent is understood as a voluntary declaration by an individual to approve the processing of their Personal Data. It is one specific justification for Personal Data processing that is assumed to be required by legal or ethical conditions. It assumes that the person can decide on processing their Personal Data, managed in and by other GovStack Building Blocks, and also that the person is free to withdraw their consent at any time.
+
+Some examples of such consent are:
+
+allowing a healthcare provider to fetch socio-demographic data from a government-run population registry to provide adequate primary healthcare services.
+
+allowing a government official to fetch relevant data from other/multiple government-run registries to analyse the eligibility for a social benefit programme.
+
+allow a government official to send Personal Data to a bank for cash transfers on behalf of the government.
+
+What Consent Is Not","Building Blocks MUST conform to GDPR principles, including the right to be forgotten account deletion, and privacy requirements to protect the rights of individuals. Note that these requirements may vary by region, and building blocks must conform to regulatory requirements wherever they are deployed.
+
+5.10 Include Support for Capturing Logging information (REQUIRED)
+
+Building Blocks MUST have a mechanism for generating logging information. This may be as simple as using STDOUT and capturing through docker logs, or may use other log sinking technologies.
+
+5.11 Use Web Hooks for Callbacks (REQUIRED)
+
+When Building Blocks require callback functionality, they must use webhooks and not direct links to functions within the building block.
+
+5.12 Enforce Transport Security (REQUIRED)
+
+All Building Blocks MUST support secure HTTPS transport with TLS 1.3 and insecure cyphers disabled.
+
+5.13 GET and PUT APIs must be Idempotent (REQUIRED)","The use of consent should be avoided in cases as below, which are not part of this specification:
+
+When a person is simply informed of the processing of the data by the organisation as part of the service provided under contract or by an authority.
+
+When consent does not have to be obtained in a situation where the entity does not identify or cannot identify people with reasonable effort.
+
+
+
+Assumptions
+
+Lays out the pre-conditions needed for anyone to use the Consent Building Block.
+
+Data Disclosure Agreements between organisations are already in place. For example, a healthcare organisation has already got the required authorisation to use the citizen data registry.
+
+To link a Consent Agreement with the specific Individual, Consent Building Block assumes the authentication and authorization to be handled in a trusted manner outside of it (see below)."
+5,What specific indicators and targets are outlined in Canada's Cybersecurity Strategy?,3,3_Canada_Cybersec_Strategy,"This document is intended to provide guidance for building block working groups and developers of products that will be integrated into a GovStack implementation. It also provides guidlines for implementers and system integrators who are deploying solutions that leverage the GovStack approach. It provides guidelines and principles that should be considered by all building blocks and cross-cutting requirements that must be considered for any GovStack project.
+
+This will accelerate the collaborative development of best-of-breed digital public goods, enhancing efficiency and transparency across the world - especially in low-resource settings.
+
+2.1 GovStack and the Building Blocks Approach","New technologies treated with suspicion in local communities especially if prior experience of job losses or unintended social consequences
+
+Cultural barriers
+
+New technologies are seen as a challenge to cultural traditions and communal activities. Technology can also face barriers such as language, role of women in the society, lack of entrepreneurs or dependencies created by decades of development aid
+
+Additionally, the Principles for Digital Development are especially relevant when designing for low resource setting. Refer to https://digitalprinciples.org/ for information on these Principles.
+
+Each building block specification SHOULD specify mitigations for these issues.
+
+4 Building Block Design Principles
+
+While the following principles are relevant to many technology deployments, when leveraging the GovStack approach it is important to keep these principles in mind during all phases of design, development, and deployment.
+
+4.1 Citizen-Centric","From Wikipedia: a variant of the service-oriented architecture (SOA) structural style – arranges an application as a collection of loosely coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight.
+
+4.4 Secure
+
+With any technology deployment, security is paramount. Detailed security requirements are defined in the GovStack Security Requirements. Beyond those standards, Building Blocks should have the following attributes:
+
+Building Blocks are audited and certified before being made available
+
+Development processes and standards enforce quality and security
+
+Different certification levels reflect level of standards-compliance
+
+Regular security scanning and auditing
+
+Public ratings and reviews
+
+Comprehensive logging and exception handling
+
+4.5 Accessible
+
+It is vitally important that technology solutions be usable by all. Some characteristics of accessible design include:","The SDG Digital Investment Framework, developed by the International Telecommunication Union (ITU) and the Digital Impact Alliance (DIAL), has formally defined criteria. Building blocks MUST meet the following criteria:
+
+Reusable software components
+
+Licensed as open source, proprietary, or freely available with Open Access to data
+
+Facilitates one or more generic Workflows
+
+Applicable to multiple SDG Use Cases across multiple sectors
+
+Interoperable with other ICT Building Blocks
+
+Designed for Scalability
+
+Designed for Extensibility
+
+Standards Based Conformance or Compliance
+
+Digital Public Goods Alliance (DPGA)
+
+Additionally, the Digital Public Goods Alliance has created a definition of Building Blocks. In this definition, a building block:
+
+Refers to software code, platforms, and applications that are interoperable, provide a basic digital service at scale, and can be reused for multiple use cases and contexts.
+
+Serves as a component of a larger system or stack.","GovStack aims to provide a reference architecture for digital governance software to support sustainable development goals. Rooted in a ""Whole-of-Government"" approach, the GovStack Framework provides a methodology for leveraging common technology components and infrastructure to more easily create and deploy interoperable digital platforms which can address high-priority use cases across multiple sectors. The guidelines and requirements described in this document provide a framework for the development of digital building blocks oriented toward this goal.
+
+2.2 Criteria for Building Blocks
+
+The following provide criteria and definitions for Building Blocks, developed by organizations whose work is focused around achievement of the Sustainable Development Goals (SDGs).
+
+SDG Digital Investment Framework"
+6,What measures is the government of Canada taking in response to data security challenges posed by the emergence of novel technologies?,3,3_Canada_Cybersec_Strategy,"Auditing of inappropriate data access is only possible when a log trace exists.
+
+3.1
+
+Workflow
+
+Consent
+
+Given an Individual, query if active Consent Records exist (for instance, to spot if other external data needs to be kept).
+
+4.1
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/ Data Protection Act/ Right to be Forgotten/etc.)
+
+4.2
+
+Any
+
+Consent
+
+Fundamental individual rights (General Data Protection Regulation/Data Protection Act/etc.)
+
+
+
+5 Cross-Cutting Requirements
+
+This section will highlight important requirements or describe any additional cross-cutting requirements that apply to this Building Block.
+
+5.1 Requirements
+
+The cross-cutting requirements described in this section are an extension of the cross-cutting requirements defined in the architecture specification document. Any implementation MUST adhere to all requirements from GovStack Security Requirements.
+
+5.1.1 Personal data MUST be kept private (REQUIRED)","New technologies treated with suspicion in local communities especially if prior experience of job losses or unintended social consequences
+
+Cultural barriers
+
+New technologies are seen as a challenge to cultural traditions and communal activities. Technology can also face barriers such as language, role of women in the society, lack of entrepreneurs or dependencies created by decades of development aid
+
+Additionally, the Principles for Digital Development are especially relevant when designing for low resource setting. Refer to https://digitalprinciples.org/ for information on these Principles.
+
+Each building block specification SHOULD specify mitigations for these issues.
+
+4 Building Block Design Principles
+
+While the following principles are relevant to many technology deployments, when leveraging the GovStack approach it is important to keep these principles in mind during all phases of design, development, and deployment.
+
+4.1 Citizen-Centric","Design of systems should be rooted in the needs of the citizens/users of these platforms. A Citizen-centric technology will include the following attributes:
+
+User-centered design
+
+Right to be forgotten: everything must be deletable
+
+The best tools evolve from empathizing, understanding and designing for the needs of end-users. Accordingly, we’ve identified a series of use cases and user journeys here: GovStack Use Cases
+
+Each use case is composed of a collection of modules, or building blocks. As you can see, a relatively small set of these building blocks can be readily applied to a wide variety of applications in low-resource settings.
+
+4.2 Open
+
+Where possible, GovStack advocates for the use of open technology, which can reduce cost and help avoid vendor lock-in. Open technology can be defined as:
+
+Based on open standards
+
+Based on Digital Development Principles, see https://digitalprinciples.org/ and https://digitalinvestmentprinciples.org/","Individual consent is captured within the context of digital interaction. This interaction is composite of all the information systems involved, not solely the Consent Building Block. Thus, the legal and ethical boundaries of consent are defined in the entirety of the interaction. In particular, consent, as defined by ISO/TS 17975:2015(E), should be seen as a ""set of agreements and constraints"" that an informed and knowledgeable [individual] agrees to apply to their data processing. This definition, not based on the purpose of the data usage, can lead to a consent management framework also incorporating authorisations or unrelated constraints of the system. For example, in health information and healthcare service delivery, consent is also the process whereby a set of constraints is agreed upon so that information may be collected and used or disclosed. However, it is also the outcome of the process. As a rule of thumb, limiting unintended secondary usage of data is helpful to","Definition: In this phase, the organisation (a Data Provider or a Data Consumer) adopts and defines a Data Policy that applies to the industry or sector-specific data usage as a template. While this phase is considered a “black box” to the Consent Building Block, it is an essential reference point for configuration and compatibility checks in all following phases.
+
+Preparation: In this phase, the organisation (Data Provider or Data Consumer) that intends to process Personal Data configures the Consent Agreement and relevant rules for its use. An organisation could use Personal Data for third-party data sharing, as an example."
+7,What are the API requirements that apply to the Consent building block?,4,4_GovStack_Specs,"In general, the Consent Building Block shall follow the authentication and authorisation requirements as laid out in the GovStack architecture. For clarity, Consent Building Block's API endpoints are invoked with a client-supplied API key which must defer to the Identification and Verification Building Block in order to verify the role and/or scope of the API key matches the API endpoint to which it is supplied. This is mentioned here, as this definition is drafted without clear guidance in the OpenAPI specification for the handling of roles and scopes.
+
+5.2 Exceptions to Architectural Cross-Cutting Specifications
+
+5.2.1 Privacy (REQUIRED)","In general, the Consent Building Block shall follow the authentication and authorisation requirements as laid out in the Govstack architecture. For clarity, Consent Building Block's API endpoints are invoked with a client-supplied API key which MUST defer to the Identification and Verification Building Block in order to verify the role and/or scope of the API key matches the API endpoint to which it is supplied. This is mentioned here, as this Definition is drafted without clear guidance in the OpenAPI spec for the handling of roles and scopes.
+
+5.3 Standards
+
+5.3.1 ISO 8601
+
+All dates should follow ISO 8601.
+
+5.3.2 RFC 7159
+
+RFC 7159 - The JavaScript Object Notation (JSON).
+
+5.3.3 OpenAPI
+
+OpenAPI Version 3.1.0.
+
+5.3.4 REST API Design Guidelines Part 1
+
+RESTful APIs follow TM Forum Specification: “REST API Design Guidelines Part 1” (requirement derived from GovStack Architecture and Nonfunctional Requirements).
+
+
+
+
+
+2","The Consent Building Block enables organisations to enforce Data Policies that require signed consent by Individuals for the use of their Personal Data. Its key purpose is to allow individuals to view Consent Agreements and sign or withdraw their consent on what Personal Data is used and accessible to organisations. It also clarifies the Data Policy applied, such as the purpose, retention period, jurisdiction, third-party data sharing, etc.
+
+The Consent Building Block implements the key functionalities described in the consent management lifecycle. It includes the ability to configure consent agreements by an organisation admin, present consent requests towards individuals, capture consents, enable queries if consent exists, or not, and enable independent audit of consents.","1.1 Querying: Which Consent Agreement is needed for specified data processing/ consumption?
+
+Any
+
+Workflow Building Block
+
+Consent Building Block does have knowledge or state to resolve which Data Consumer or Data Producer requires consent. Everything regarding consent has a precondition that a decision is made and manifested in the Workflow Building Block or any other Data Consumer.
+
+1.2 Data processing/ consuming system stores/fetches data with consent + prompts the user if none exists
+
+Any
+
+Consent Building Block
+
+Given an Agreement ID and a User ID, the Consent Building Block can resolve if consent exists and possibly prompt the user. Workflow Building Block is especially inappropriate here because of User Interface integration and a blocking and sequential call stack.
+
+1.3 Data processing/ consuming system stores/ fetches data with consent, no halts operations without consent
+
+Any
+
+Workflow","Maintain Version Control
+
+Require Review of Contributions
+
+Document Your Objectives
+
+Document your code
+
+Use plain English
+
+Use open standards
+
+Use continuous integration
+
+Publish with an open license
+
+Use a coherent style
+
+Pay attention to codebase maturity
+
+
+
+
+
+
+CONSENT BUILDING BLOCK
+
+
+
+2 Description
+
+The Consent Building Block enables services for individuals to approve the use of their Personal Data by defining the principles, functions, and architecture of an information system. For organisations that process Personal Data​,​ it provides the ability to know the ​individual's will and legitimately process such Personal Data. The Consent Building Block is a process-oriented GovStack Building Block facilitating auditable bilateral agreements within a multi-agent environment that integrates with most other Building Blocks."
+8,What additional building blocks are essential to support the functionality of the consent building block?,4,4_GovStack_Specs,"Maintain Version Control
+
+Require Review of Contributions
+
+Document Your Objectives
+
+Document your code
+
+Use plain English
+
+Use open standards
+
+Use continuous integration
+
+Publish with an open license
+
+Use a coherent style
+
+Pay attention to codebase maturity
+
+
+
+
+
+
+CONSENT BUILDING BLOCK
+
+
+
+2 Description
+
+The Consent Building Block enables services for individuals to approve the use of their Personal Data by defining the principles, functions, and architecture of an information system. For organisations that process Personal Data​,​ it provides the ability to know the ​individual's will and legitimately process such Personal Data. The Consent Building Block is a process-oriented GovStack Building Block facilitating auditable bilateral agreements within a multi-agent environment that integrates with most other Building Blocks.","The Consent Building Block enables organisations to enforce Data Policies that require signed consent by Individuals for the use of their Personal Data. Its key purpose is to allow individuals to view Consent Agreements and sign or withdraw their consent on what Personal Data is used and accessible to organisations. It also clarifies the Data Policy applied, such as the purpose, retention period, jurisdiction, third-party data sharing, etc.
+
+The Consent Building Block implements the key functionalities described in the consent management lifecycle. It includes the ability to configure consent agreements by an organisation admin, present consent requests towards individuals, capture consents, enable queries if consent exists, or not, and enable independent audit of consents.","The functionalities are derived from the consent agreement lifecycle and categorised according to the Actors described above. While the consenting workflows (as described above) are implicitly considered the centrepiece of the Consent Building Block, it is important to realise that the integrity of consent management can only be achieved if robust configuration before and auditing after the Consent Agreement signing and Consent Record verification activities are in place. Hence, the functionalities are described following the logical sequence of the consent agreement lifecycle and they are all equally important components of the Consent Building Block.","In general, the Consent Building Block shall follow the authentication and authorisation requirements as laid out in the GovStack architecture. For clarity, Consent Building Block's API endpoints are invoked with a client-supplied API key which must defer to the Identification and Verification Building Block in order to verify the role and/or scope of the API key matches the API endpoint to which it is supplied. This is mentioned here, as this definition is drafted without clear guidance in the OpenAPI specification for the handling of roles and scopes.
+
+5.2 Exceptions to Architectural Cross-Cutting Specifications
+
+5.2.1 Privacy (REQUIRED)","Following is the first core set of key functionalities of the Consent Building Block. For potential future developments of the specification follow the work in progress at GovStack confluence page.
+
+4.1 Administrator User Functionalities
+
+The Administrator (Data Provider or Data Consumer Admin) configures the Consent Building Block on behalf of the organisation. For simplicity, it is foreseen that one organisation involved in the data processing transaction (that is either Data Provider or Data Consumer) takes the responsibility for the configuration of the Data Policy and respective Consent Agreements(s), and so that the organisation’s Administrator maintains the required configurations.
+
+The main Administrator actions expected to perform via Consent Building Block are:
+
+configuring Data Policies, requesting and signing Consent Agreements with Individuals;
+
+viewing (reading, exporting) the Consent Agreements and relevant reports;"
+9,What are the key findings of the CyberPeace Institute's analysis of cyber threats affecting NGOs in International Geneva?,5,5_CyberPeace_Report,"In general, the Consent Building Block shall follow the authentication and authorisation requirements as laid out in the GovStack architecture. For clarity, Consent Building Block's API endpoints are invoked with a client-supplied API key which must defer to the Identification and Verification Building Block in order to verify the role and/or scope of the API key matches the API endpoint to which it is supplied. This is mentioned here, as this definition is drafted without clear guidance in the OpenAPI specification for the handling of roles and scopes.
+
+5.2 Exceptions to Architectural Cross-Cutting Specifications
+
+5.2.1 Privacy (REQUIRED)","Consent Building Block deals with transparency on data usage in a given context. Thus privacy-by-design of the system's actors is often an excellent guiding principle for interpreting international, national, and organisational policies and governance principles to implement the functional consent framework. A tangible outcome from a Data Protection Impact Analysis (DPIA) is a structured approach that can deliver the input for the actual implementation of the Consent Building Block.","In general, the Consent Building Block shall follow the authentication and authorisation requirements as laid out in the Govstack architecture. For clarity, Consent Building Block's API endpoints are invoked with a client-supplied API key which MUST defer to the Identification and Verification Building Block in order to verify the role and/or scope of the API key matches the API endpoint to which it is supplied. This is mentioned here, as this Definition is drafted without clear guidance in the OpenAPI spec for the handling of roles and scopes.
+
+5.3 Standards
+
+5.3.1 ISO 8601
+
+All dates should follow ISO 8601.
+
+5.3.2 RFC 7159
+
+RFC 7159 - The JavaScript Object Notation (JSON).
+
+5.3.3 OpenAPI
+
+OpenAPI Version 3.1.0.
+
+5.3.4 REST API Design Guidelines Part 1
+
+RESTful APIs follow TM Forum Specification: “REST API Design Guidelines Part 1” (requirement derived from GovStack Architecture and Nonfunctional Requirements).
+
+
+
+
+
+2","Limited funding for ICT projects and initiatives. ICT intervention may not be prioritized. No institutionalized or routinized support for ICT projects/ interventions by the government.
+
+ICT projects/ Initiatives
+
+ICT projects and intervention are implemented in a silo, none standard approaches and most of the ICT interventions are proprietary and high cost ventures from private institutions. No national standard architecture for interoperability/ integration of systems
+
+Capacity development and social instruments
+
+Low ICT literacy level among user, None or little research and development done by the national institutions/ academia on the use and scale up ICT in the country. Very few ICT professionals to support large scale ICT projects at national level
+
+Connectivity/ Internet access","New technologies treated with suspicion in local communities especially if prior experience of job losses or unintended social consequences
+
+Cultural barriers
+
+New technologies are seen as a challenge to cultural traditions and communal activities. Technology can also face barriers such as language, role of women in the society, lack of entrepreneurs or dependencies created by decades of development aid
+
+Additionally, the Principles for Digital Development are especially relevant when designing for low resource setting. Refer to https://digitalprinciples.org/ for information on these Principles.
+
+Each building block specification SHOULD specify mitigations for these issues.
+
+4 Building Block Design Principles
+
+While the following principles are relevant to many technology deployments, when leveraging the GovStack approach it is important to keep these principles in mind during all phases of design, development, and deployment.
+
+4.1 Citizen-Centric"
+10,What are the key lessons learnt from the case studies examined in the report?,5,5_CyberPeace_Report,"Built on open-source software where possible
+
+Supports open development, see https://standard.publiccode.net/
+
+Cloud native where possible (Docker/Docker Compose/OCI containers)
+
+4.3 Sustainable
+
+Any Building Blocks should be developed in a manner which is sustainable and ensures that the technology will continue to be updated and maintained. Some core considerations for sustainability are:
+
+Stewardship is critical, see https://publiccode.net/codebase-stewardship/
+
+Continuous funding for maintenance, development and evolution
+
+Attractive to ICT industry and individual developers in deployment environment (incentives must be aligned)
+
+Lower cost than commercial solutions due to shared development costs
+
+Uses microservices-based architecture instead of monolithic.
+
+This increases interoperability, development and deployment speed and reliability.","New technologies treated with suspicion in local communities especially if prior experience of job losses or unintended social consequences
+
+Cultural barriers
+
+New technologies are seen as a challenge to cultural traditions and communal activities. Technology can also face barriers such as language, role of women in the society, lack of entrepreneurs or dependencies created by decades of development aid
+
+Additionally, the Principles for Digital Development are especially relevant when designing for low resource setting. Refer to https://digitalprinciples.org/ for information on these Principles.
+
+Each building block specification SHOULD specify mitigations for these issues.
+
+4 Building Block Design Principles
+
+While the following principles are relevant to many technology deployments, when leveraging the GovStack approach it is important to keep these principles in mind during all phases of design, development, and deployment.
+
+4.1 Citizen-Centric","Consent Building Block deals with transparency on data usage in a given context. Thus privacy-by-design of the system's actors is often an excellent guiding principle for interpreting international, national, and organisational policies and governance principles to implement the functional consent framework. A tangible outcome from a Data Protection Impact Analysis (DPIA) is a structured approach that can deliver the input for the actual implementation of the Consent Building Block.","This document is intended to provide guidance for building block working groups and developers of products that will be integrated into a GovStack implementation. It also provides guidlines for implementers and system integrators who are deploying solutions that leverage the GovStack approach. It provides guidelines and principles that should be considered by all building blocks and cross-cutting requirements that must be considered for any GovStack project.
+
+This will accelerate the collaborative development of best-of-breed digital public goods, enhancing efficiency and transparency across the world - especially in low-resource settings.
+
+2.1 GovStack and the Building Blocks Approach","To avoid ambiguity, we use the precise term Data Processing Auditor to stress the specificity of tasks to be performed by and for the Consent Building Block; all other actions not within the Consent Building Block's scope are considered as an external prerequisite and as a “black box” activity. With respect to audit, this role is distinguished from the data policy auditor. The Data Processing Auditor relies on an audit universe defined by the control and risk management of the specific project and context (i.e. outside the Consent Building Block). “Who needs to consent to what” is the outcome of a DPIA (Data Protection Impact Analysis), ensuring that the data policies are compliant with the relevant data protection regulations for the project.
+
+The main actions a Data Processing Auditor (or Data Protection Officer, DPO) is expected to perform via Consent Building Block are:
+
+auditing tracking the consents (opt-in/opt-out);"
